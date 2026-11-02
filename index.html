@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Measure Before You Repair</title>
+<meta name="description" content="Dx-Rx: an MLLM agent that measures before it repairs, for blind restoration of multi-artifact 3-D brain MRI.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>Measure Before You Repair</h1>
+    <p class="sub">An Explainable Agent for Blind Restoration of Multi-Artifact 3-D MRI</p>
+    <p class="authors">Necati Sefercioglu, Mehmet Ozan Unal, Metin Ertas, Altan Cakir, Isa Yildirim</p>
+    <p class="aff">Istanbul Technical University</p>
+    <nav><a class="btn" href="https://github.com/itu-biai/measure-before-you-repair">Code</a></nav>
+  </header>
+
+  <section>
+    <p>Dx-Rx is an agent in which a multimodal large language model (MLLM) measures suspected artifacts before it
+    repairs them. It receives one 3-D T1-weighted brain volume with an unknown mix of five artifacts (noise, spike,
+    ghosting, bias field, motion), calls five diagnostic tools and four restoration tools in any order it chooses,
+    checks each repair, can return to any earlier version, and ends with a radiology-style report that is checked
+    against its own run log.</p>
+  </section>
+
+  <section>
+    <h2>One test volume, before and after</h2>
+    <video controls muted playsinline preload="metadata" poster="assets/poster.jpg">
+      <source src="assets/dxrx_t0145_itksnap.mp4" type="video/mp4">
+    </video>
+    <p class="cap">Test volume t0145 with three simulated artifacts (bias field, spike, noise), viewed in ITK-SNAP:
+    the input on the left and the volume Dx-Rx returned with GPT-6.1 Terra on the right, with the same gray window,
+    through the axial, coronal and sagittal slices. A selected example: Dx-Rx removed 78.9&nbsp;% of this volume's
+    artifact error; over the 138 test volumes with a repairable artifact it removed 64.5&nbsp;% on average.</p>
+  </section>
+
+  <section>
+    <h2>The agent's report for this run</h2>
+    <p class="cap">The agent's own words, shortened, with version labels and tool names put in plain words, and
+    checked against the run log. <a href="assets/report/report.html">Full report</a>, verbatim, with every tool
+    call.</p>
+    <iframe id="card" src="assets/report/card.html" title="The agent's report for test volume t0145"></iframe>
+  </section>
+
+  <footer>
+    <p>Scan from the <a href="https://brain-development.org/ixi-dataset/">IXI dataset</a> (CC BY-SA 3.0). The video
+    and pictures on this page are shared under CC BY-SA 3.0. Code under the MIT License.</p>
+  </footer>
+</main>
+<script>
+  // Fit the report card's frame to its content (same origin).
+  const f = document.getElementById("card");
+  const fit = () => { try { f.style.height = f.contentDocument.documentElement.scrollHeight + "px"; } catch (e) {} };
+  f.addEventListener("load", fit);
+  window.addEventListener("resize", fit);
+</script>
+</body>
+</html>
