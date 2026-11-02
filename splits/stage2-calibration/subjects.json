@@ -1,0 +1,112 @@
+[
+ {
+  "id": "IXI550",
+  "site": "Guys",
+  "rank": 60,
+  "native_sigma": 0.025930115216980004,
+  "k_star": 143,
+  "origin": [
+   -6,
+   -14
+  ]
+ },
+ {
+  "id": "IXI194",
+  "site": "Guys",
+  "rank": 61,
+  "native_sigma": 0.0225078507118842,
+  "k_star": 158,
+  "origin": [
+   -5,
+   -17
+  ]
+ },
+ {
+  "id": "IXI148",
+  "site": "HH",
+  "rank": 62,
+  "native_sigma": 0.02016337083752129,
+  "k_star": 152,
+  "origin": [
+   -7,
+   -8
+  ]
+ },
+ {
+  "id": "IXI565",
+  "site": "HH",
+  "rank": 63,
+  "native_sigma": 0.022652610375972996,
+  "k_star": 150,
+  "origin": [
+   -5,
+   -18
+  ]
+ },
+ {
+  "id": "IXI259",
+  "site": "HH",
+  "rank": 64,
+  "native_sigma": 0.02168423330248482,
+  "k_star": 133,
+  "origin": [
+   -8,
+   -6
+  ]
+ },
+ {
+  "id": "IXI251",
+  "site": "Guys",
+  "rank": 66,
+  "native_sigma": 0.028272676444363678,
+  "k_star": 159,
+  "origin": [
+   -6,
+   -21
+  ]
+ },
+ {
+  "id": "IXI290",
+  "site": "IOP",
+  "rank": 67,
+  "native_sigma": 0.01494675403524868,
+  "k_star": 143,
+  "origin": [
+   -8,
+   5
+  ]
+ },
+ {
+  "id": "IXI065",
+  "site": "Guys",
+  "rank": 68,
+  "native_sigma": 0.023026546331239472,
+  "k_star": 110,
+  "origin": [
+   -7,
+   -2
+  ]
+ },
+ {
+  "id": "IXI293",
+  "site": "IOP",
+  "rank": 69,
+  "native_sigma": 0.013493132079056443,
+  "k_star": 111,
+  "origin": [
+   -8,
+   -2
+  ]
+ },
+ {
+  "id": "IXI224",
+  "site": "Guys",
+  "rank": 71,
+  "native_sigma": 0.023635869786876165,
+  "k_star": 133,
+  "origin": [
+   -6,
+   1
+  ]
+ }
+]

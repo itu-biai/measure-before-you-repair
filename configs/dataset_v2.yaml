@@ -1,0 +1,73 @@
+# Dataset v2 (3-D, D73 = B, 22 Oct 2026). Paths are relative to the repo root.
+# Every value is explained in ../visual-guide/DECISIONS.md (D-numbers in comments). blind-mri-v1 stays frozen (D66).
+paths:
+  raw: ../dataset/IXI-T1          # read-only
+  prep: ../dataset/IXI-T1-prep    # Stage 1 output, reused unchanged
+  calib: splits/stage2-calibration   # the 10 calibration subjects (D28, D40): never in dev or test
+  v1_split: splits/blind-mri-v1-split.json   # v1's test / dev subjects (D80)
+  v2cal: ../dataset/v2-calibration      # clinical calibration output (D84, D85)
+  out: ../dataset/blind-mri-v2    # the v2 build (D81)
+seed: 20261026                    # v1's seed: the priority order of subjects is the same (D04)
+plan_seed: 20261023               # v2's own stream for dealing, levels, IDs and case seeds
+
+stage1:
+  priority_quota: {Guys: 33, HH: 19, IOP: 8}   # only to rebuild the seeded subject order (D04)
+
+# Stage 2 in 3-D. Each case is a whole 1 mm volume in the box, corrupted as one 3-D scan (D73–D78).
+# Levels: mild / moderate / borderline, up to the typical scan radiologists call unusable (D59, D64); borderline is the
+# grey zone where real scans were graded usable (5 of 17) or unusable (12 of 17) (D92).
+# Two clinical scales (D83): noise on clinical noise grades (σ per voxel); motion-like artifacts on MR-ART's radiologist
+# grades. Motion's bands come from the clinical calibration (scripts/calibrate_v2.py fit, 22 Oct, 30 subjects, 60 graded
+# motion scans; ../dataset/v2-calibration/bands.json): the whole-brain damage at which our 3-D motion, applied to the
+# MR-ART still scans, changes the entropy (EFC) as much as real motion scans of grade medium p25 / median / p75 and bad
+# median (the top edge) (D84); the air signal agrees (0.020 / 0.023 / 0.036 / 0.068). Ghosting and spike use the same
+# whole-brain damage scale (D90): entropy and air are dominated by the air, which a spike fills everywhere, so they cannot
+# compare artifact types (inside the head the three change entropy alike per unit of brain damage, 1.0 / 1.4 / 1.3).
+stage2:
+  box: [192, 240, 240]        # (LR, AP, SI) at 1 mm, centred on the brain's 3-D bounding box (D75)
+  # The grade scale in motion-equivalent whole-brain damage (WM = 1): motion's own bands; the D65 budget uses it.
+  damage_band: &motion [[0.0194, 0.0283], [0.0283, 0.0333], [0.0333, 0.0553]]   # D84; 95 % CI of the top edge 0.046–0.070
+  bias:                       # max/min − 1 over the whole brain; all 20 terms of the order-3 field (D78, D86)
+    target_maxmin: [[0.15, 0.25], [0.35, 0.45], [0.55, 0.70]]
+    order: 3
+  motion:                     # 6 dof, k-space split along A–P (D76); a prior draw scaled to hit the target (D88)
+    moves: [1, 2]
+    degrees: [0, 2]
+    translation_mm: [0, 2]
+    image_interpolation: bspline
+    rms_band: *motion
+    rtol: 0.01                # damage within 1 % of the drawn target
+    max_steps: 6
+    max_draws: 20
+  ghosting:                   # n ghosts along A–P, ghost ratio set by whole-brain damage (D60, D77)
+    rms_band: *motion         # D90
+    num_ghosts: [2, 4]
+    restore: null
+  spike:                      # 1–2 dots in 3-D k-space 10–60 samples from the centre (D77)
+    rms_band: *motion         # D90
+    n_spikes: [1, 2]
+    k_offset: [10, 60]
+  budget:                     # D65 on the shared scale: own damage × equiv = motion damage of the same grade (D90: 1)
+    pool: [motion, ghosting, spike]
+    equiv: {motion: 1.0, ghosting: 1.0, spike: 1.0}   # D90; entropy-matched would be 1 / 2.18 / 7.46
+    min_share: 0.0133         # D89: each share ≥ the damage at which our motion differs as much as two good scans
+    own_sigma_floor: false    # D89: shares are judged on the clinical scale, not against the scan's own σ
+  noise:                      # white Rician; level = total σ, native ⊕ added, in WM units (D61, D83: unchanged)
+    sigma_total: [[0.030, 0.038], [0.038, 0.048], [0.048, 0.061]]
+
+# Stage 3 in 3-D: one subject per test and dev-mixed case (D80); recipes and level balance as v1 (D47, D53, D55, D65).
+stage3:
+  max_native_sigma: 0.030     # D51
+  split:                      # D80: v1 test ⊂ v2 test, v1 dev ⊂ v2 dev mixed; new subjects per site in the seeded order
+    test: {Guys: 82, HH: 47, IOP: 19}
+    dev: {Guys: 33, HH: 19, IOP: 8}
+    reserve: {Guys: 10, HH: 6, IOP: 3}
+  copies:                     # cases per combination (D47, D55)
+    test: {regular: 5, stress4: 3, stress5: 3}
+    dev: {regular: 2, stress4: 1, stress5: 3}
+  stress_levels: [mild, moderate]   # D47
+  max_attempts: 5             # D58
+  flagged: {}                 # D57: subject id → reason; replaced by the next reserve of its site (0 flagged, 22 Oct)
+  # D91: frozen 22 Oct 2026. Built by commit fabcd46 (git tag blind-mri-v2); 1,434 files (24.6 GB) listed with SHA-256 in
+  # ../dataset/blind-mri-v2.sha256 (digest of that list 836de4c8…b878e). `build_v2.py build` refuses while frozen.
+  frozen: true

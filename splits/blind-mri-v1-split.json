@@ -1,0 +1,393 @@
+{
+ "seed": 20261026,
+ "rule": "D51, D52, D57",
+ "test": [
+  {
+   "id": "IXI348",
+   "site": "Guys",
+   "rank": 0,
+   "native_sigma": 0.02251
+  },
+  {
+   "id": "IXI127",
+   "site": "HH",
+   "rank": 1,
+   "native_sigma": 0.01533
+  },
+  {
+   "id": "IXI233",
+   "site": "IOP",
+   "rank": 2,
+   "native_sigma": 0.01316
+  },
+  {
+   "id": "IXI137",
+   "site": "HH",
+   "rank": 3,
+   "native_sigma": 0.0174
+  },
+  {
+   "id": "IXI038",
+   "site": "Guys",
+   "rank": 4,
+   "native_sigma": 0.02231
+  },
+  {
+   "id": "IXI499",
+   "site": "Guys",
+   "rank": 5,
+   "native_sigma": 0.02954
+  },
+  {
+   "id": "IXI168",
+   "site": "HH",
+   "rank": 6,
+   "native_sigma": 0.01798
+  },
+  {
+   "id": "IXI558",
+   "site": "Guys",
+   "rank": 7,
+   "native_sigma": 0.02494
+  },
+  {
+   "id": "IXI089",
+   "site": "Guys",
+   "rank": 8,
+   "native_sigma": 0.02365
+  },
+  {
+   "id": "IXI046",
+   "site": "Guys",
+   "rank": 9,
+   "native_sigma": 0.02152
+  },
+  {
+   "id": "IXI408",
+   "site": "Guys",
+   "rank": 10,
+   "native_sigma": 0.02088
+  },
+  {
+   "id": "IXI197",
+   "site": "Guys",
+   "rank": 11,
+   "native_sigma": 0.0255
+  },
+  {
+   "id": "IXI396",
+   "site": "HH",
+   "rank": 12,
+   "native_sigma": 0.01989
+  },
+  {
+   "id": "IXI173",
+   "site": "HH",
+   "rank": 13,
+   "native_sigma": 0.01723
+  },
+  {
+   "id": "IXI013",
+   "site": "HH",
+   "rank": 14,
+   "native_sigma": 0.01574
+  },
+  {
+   "id": "IXI201",
+   "site": "HH",
+   "rank": 15,
+   "native_sigma": 0.01673
+  },
+  {
+   "id": "IXI048",
+   "site": "HH",
+   "rank": 16,
+   "native_sigma": 0.02026
+  },
+  {
+   "id": "IXI449",
+   "site": "Guys",
+   "rank": 17,
+   "native_sigma": 0.02693
+  },
+  {
+   "id": "IXI017",
+   "site": "Guys",
+   "rank": 18,
+   "native_sigma": 0.02556
+  },
+  {
+   "id": "IXI448",
+   "site": "HH",
+   "rank": 19,
+   "native_sigma": 0.02305
+  },
+  {
+   "id": "IXI112",
+   "site": "Guys",
+   "rank": 20,
+   "native_sigma": 0.02403
+  },
+  {
+   "id": "IXI244",
+   "site": "Guys",
+   "rank": 21,
+   "native_sigma": 0.0221
+  },
+  {
+   "id": "IXI350",
+   "site": "Guys",
+   "rank": 22,
+   "native_sigma": 0.0249
+  },
+  {
+   "id": "IXI629",
+   "site": "Guys",
+   "rank": 23,
+   "native_sigma": 0.02652
+  },
+  {
+   "id": "IXI392",
+   "site": "Guys",
+   "rank": 24,
+   "native_sigma": 0.02443
+  },
+  {
+   "id": "IXI577",
+   "site": "HH",
+   "rank": 25,
+   "native_sigma": 0.02058
+  },
+  {
+   "id": "IXI123",
+   "site": "Guys",
+   "rank": 26,
+   "native_sigma": 0.02229
+  },
+  {
+   "id": "IXI016",
+   "site": "Guys",
+   "rank": 27,
+   "native_sigma": 0.02542
+  },
+  {
+   "id": "IXI083",
+   "site": "HH",
+   "rank": 29,
+   "native_sigma": 0.01748
+  },
+  {
+   "id": "IXI429",
+   "site": "Guys",
+   "rank": 30,
+   "native_sigma": 0.02214
+  },
+  {
+   "id": "IXI247",
+   "site": "Guys",
+   "rank": 31,
+   "native_sigma": 0.0249
+  },
+  {
+   "id": "IXI145",
+   "site": "Guys",
+   "rank": 32,
+   "native_sigma": 0.02554
+  },
+  {
+   "id": "IXI548",
+   "site": "IOP",
+   "rank": 33,
+   "native_sigma": 0.01902
+  },
+  {
+   "id": "IXI232",
+   "site": "IOP",
+   "rank": 34,
+   "native_sigma": 0.0133
+  },
+  {
+   "id": "IXI306",
+   "site": "IOP",
+   "rank": 36,
+   "native_sigma": 0.01325
+  },
+  {
+   "id": "IXI526",
+   "site": "HH",
+   "rank": 37,
+   "native_sigma": 0.02045
+  },
+  {
+   "id": "IXI388",
+   "site": "IOP",
+   "rank": 49,
+   "native_sigma": 0.01582
+  }
+ ],
+ "dev": [
+  {
+   "id": "IXI569",
+   "site": "Guys",
+   "rank": 35,
+   "native_sigma": 0.02426
+  },
+  {
+   "id": "IXI506",
+   "site": "Guys",
+   "rank": 38,
+   "native_sigma": 0.02917
+  },
+  {
+   "id": "IXI040",
+   "site": "Guys",
+   "rank": 39,
+   "native_sigma": 0.02255
+  },
+  {
+   "id": "IXI128",
+   "site": "HH",
+   "rank": 40,
+   "native_sigma": 0.01817
+  },
+  {
+   "id": "IXI617",
+   "site": "Guys",
+   "rank": 41,
+   "native_sigma": 0.02593
+  },
+  {
+   "id": "IXI516",
+   "site": "HH",
+   "rank": 42,
+   "native_sigma": 0.02344
+  },
+  {
+   "id": "IXI030",
+   "site": "Guys",
+   "rank": 43,
+   "native_sigma": 0.02216
+  },
+  {
+   "id": "IXI075",
+   "site": "Guys",
+   "rank": 45,
+   "native_sigma": 0.02286
+  },
+  {
+   "id": "IXI632",
+   "site": "HH",
+   "rank": 46,
+   "native_sigma": 0.02159
+  },
+  {
+   "id": "IXI332",
+   "site": "IOP",
+   "rank": 51,
+   "native_sigma": 0.01521
+  }
+ ],
+ "reserve": [
+  {
+   "id": "IXI504",
+   "site": "Guys",
+   "rank": 47,
+   "native_sigma": 0.02709
+  },
+  {
+   "id": "IXI033",
+   "site": "HH",
+   "rank": 48,
+   "native_sigma": 0.01812
+  },
+  {
+   "id": "IXI490",
+   "site": "Guys",
+   "rank": 50,
+   "native_sigma": 0.02465
+  },
+  {
+   "id": "IXI161",
+   "site": "HH",
+   "rank": 52,
+   "native_sigma": 0.02228
+  },
+  {
+   "id": "IXI661",
+   "site": "HH",
+   "rank": 53,
+   "native_sigma": 0.01817
+  },
+  {
+   "id": "IXI517",
+   "site": "IOP",
+   "rank": 54,
+   "native_sigma": 0.01567
+  },
+  {
+   "id": "IXI116",
+   "site": "Guys",
+   "rank": 55,
+   "native_sigma": 0.02322
+  },
+  {
+   "id": "IXI014",
+   "site": "HH",
+   "rank": 56,
+   "native_sigma": 0.01416
+  },
+  {
+   "id": "IXI294",
+   "site": "IOP",
+   "rank": 57,
+   "native_sigma": 0.01636
+  },
+  {
+   "id": "IXI100",
+   "site": "Guys",
+   "rank": 58,
+   "native_sigma": 0.0238
+  },
+  {
+   "id": "IXI380",
+   "site": "Guys",
+   "rank": 59,
+   "native_sigma": 0.0262
+  }
+ ],
+ "excluded": [
+  {
+   "id": "IXI627",
+   "site": "Guys",
+   "rank": 28,
+   "replaced_by": null,
+   "reason": "D51: own σ 3.12 % ≥ 3.0 % (already at the mild noise level)"
+  },
+  {
+   "id": "IXI640",
+   "site": "Guys",
+   "rank": 44,
+   "replaced_by": null,
+   "reason": "D51: own σ 3.54 % ≥ 3.0 % (already at the mild noise level)"
+  }
+ ],
+ "offsets_mm": {
+  "test": [
+   -12,
+   -4,
+   4,
+   12
+  ],
+  "dev": [
+   -15,
+   -9,
+   -3,
+   3,
+   9,
+   15
+  ],
+  "sweep": [
+   0
+  ]
+ }
+}

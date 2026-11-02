@@ -1,0 +1,34 @@
+[project]
+name = "bamr"
+version = "0.1.0"
+description = "Blind Agentic MRI Restoration (ISBI 2027): dataset generation, tools, agent"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "torchio==1.2.1",
+    "SimpleITK>=2.4",
+    "hd-bet>=2.0",
+    "nibabel>=5.2",
+    "numpy>=1.26",
+    "scipy>=1.12",
+    "scikit-image>=0.22",
+    "PyWavelets>=1.6",
+    "pandas>=2.2",
+    "matplotlib>=3.8",
+    "httpx==0.28.1",
+    "pyyaml>=6.0",
+    "lpips==0.1.4",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bamr"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
