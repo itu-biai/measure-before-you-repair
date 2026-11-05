@@ -3,6 +3,8 @@
 Code for the paper *Measure Before You Repair: An Explainable Agent for Blind Restoration of Multi-Artifact 3-D MRI*
 by Necati Sefercioglu, Mehmet Ozan Unal, Metin Ertas, Altan Cakir and Isa Yildirim (Istanbul Technical University).
 
+Paper: [arXiv:2611.03996](https://arxiv.org/abs/2611.03996)
+
 Dx-Rx is an agent in which a multimodal large language model (MLLM) measures suspected artifacts before it repairs
 them. It receives one 3-D T1-weighted brain volume with an unknown mix of five artifacts (noise, spike, ghosting, bias
 field, motion), calls five diagnostic tools and four restoration tools in any order it chooses, checks each repair, can
@@ -111,6 +113,20 @@ uv run pytest
 ```
 
 Tests that need the data skip themselves when it is absent.
+
+## Citation
+
+```bibtex
+@misc{sefercioglu2026measurerepairexplainableagent,
+      title={Measure Before You Repair: An Explainable Agent for Blind Restoration of Multi-Artifact 3-D MRI},
+      author={Necati Sefercioglu and Mehmet Ozan Unal and Metin Ertas and Altan Cakir and Isa Yildirim},
+      year={2026},
+      eprint={2611.03996},
+      archivePrefix={arXiv},
+      primaryClass={eess.IV},
+      url={https://arxiv.org/abs/2611.03996},
+}
+```
 
 ## License
 
